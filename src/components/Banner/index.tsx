@@ -5,7 +5,7 @@ export function Banner() {
     <Flex
       justify="space-around"
     >
-      <Image src="./background.svg" position="absolute" zIndex="-1" minWidth={ ["1440px", "1440px", "1440px", "100%", "100%"] } />
+      <Image src="./assets/background.svg" position="absolute" zIndex="-1" minWidth={ ["1440px", "1440px", "1440px", "100%", "100%"] } />
       <Flex
         flexDir="column"
       >
@@ -29,7 +29,7 @@ export function Banner() {
         { typeof window !== "undefined" &&
           (window?.innerWidth < 375 ?
             null :
-            (<Image src="./airplane.svg" alt="Avião" transform="rotate(3deg)" width={ [null, null, null, "500px", "600px"] } />)
+            (<Image src="./assets/airplane.svg" alt="Avião" transform="rotate(3deg)" width={ [null, null, null, "500px", "600px"] } />)
           )
         }
       </Flex>
