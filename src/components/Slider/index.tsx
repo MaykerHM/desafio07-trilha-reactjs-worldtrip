@@ -1,6 +1,7 @@
-import { Flex, Image } from '@chakra-ui/react';
+import { Container, Flex, Image, Text } from '@chakra-ui/react';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Slide } from './Slide';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -19,19 +20,22 @@ export default () => {
         onSwiper={ (swiper) => console.log(swiper) }
       >
         <SwiperSlide>
-          <Image src="assets/europe.svg" />
+          <Slide continent="América do Norte" description="O continente do novo mundo" imageSRC="assets/north_america.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src="assets/north_america.jpg" />
+          <Slide continent="América do Sul" description="O continente do novo mundo" imageSRC="assets/south_america.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src="assets/south_america.jpg" />
+          <Slide continent="Asia" description="O continente do novo mundo" imageSRC="assets/asia.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src="assets/europe.svg" />
+          <Slide continent="Africa" description="O continente do novo mundo" imageSRC="assets/africa.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src="assets/europe.svg" />
+          <Slide continent="Europa" description="O continente mais antigo" imageSRC="assets/europe.svg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Slide continent="Oceania" description="O continente do novo mundo" imageSRC="assets/oceania.jpg" />
         </SwiperSlide>
       </Swiper>
     </Flex>
