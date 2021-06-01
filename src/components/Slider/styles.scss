@@ -5,11 +5,8 @@
 }
 
 .swiper-container {
-    width: 1240px;
+    max-width: 1240px;
     height: 450px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .swiper-slide {

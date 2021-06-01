@@ -1,8 +1,16 @@
-import {useRouter} from 'next/router'
+import { useContext } from 'react'
+import { ContinentsContext } from '../continentsContext'
+
+import { makeServer } from "../server"
+
+if (process.env.NODE_ENV === "development") {
+  makeServer({ environment: "development" })
+}
 
 export default function Continent() {
-    const router = useRouter()
+    const data = useContext(ContinentsContext)
+
     return(
-        <h1>{router.query.continent}</h1>
+        <h1>{data.toString()}</h1>
     )
 }

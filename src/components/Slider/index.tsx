@@ -1,15 +1,16 @@
-import { Container, Flex, Image, Text } from '@chakra-ui/react';
+import { Flex, Link } from '@chakra-ui/react';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Slide } from './Slide';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
-export default () => {
+export function Slider() {
   return (
     <Flex
       justify="center"
       align="center"
+      mb="2.5rem"
     >
       <Swiper
         spaceBetween={ 50 }
@@ -19,7 +20,7 @@ export default () => {
         onSlideChange={ () => console.log('slide change') }
         onSwiper={ (swiper) => console.log(swiper) }
       >
-        <SwiperSlide>
+        <SwiperSlide >
           <Slide continent="América do Norte" description="O continente do novo mundo" imageSRC="assets/north_america.jpg" />
         </SwiperSlide>
         <SwiperSlide>
