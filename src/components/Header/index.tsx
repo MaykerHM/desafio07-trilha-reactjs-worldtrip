@@ -8,7 +8,7 @@ export function Header() {
       py="4"
       bg="gray.50"
     >
-      <img src='./logo.svg' />
+      <img src='/logo.svg' />
     </Flex>
   )
 }

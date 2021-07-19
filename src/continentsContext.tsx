@@ -4,6 +4,8 @@ import { api } from './services/api'
 interface Continent {
     id: number
     name: string
+    description: string
+    continentIMG: string
 }
 
 interface ContinentsProviderProps {
@@ -12,17 +14,17 @@ interface ContinentsProviderProps {
 
 export const ContinentsContext = createContext<Continent[]>([])
 
-export function ContinentsProvider({children}: ContinentsProviderProps) {
+export function ContinentsProvider({ children }: ContinentsProviderProps) {
     const [continents, setContinents] = useState<Continent[]>([])
 
     useEffect(() => {
         api.get("/continents")
-            .then(response => setContinents(response.data))
+            .then(response => setContinents(response.data.continents))
     }, [])
 
     return (
-        <ContinentsContext.Provider value={continents}>
-            {children}
+        <ContinentsContext.Provider value={ continents }>
+            { children }
         </ContinentsContext.Provider>
     )
 }

@@ -1,11 +1,16 @@
-import { Flex, Link } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
+import { useContext } from 'react';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Slide } from './Slide';
+import { ContinentsContext } from '../../continentsContext';
+import { Container, Image, Link, Text } from "@chakra-ui/react";
+
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 export function Slider() {
+  const continents = useContext(ContinentsContext)
+
   return (
     <Flex
       justify="center"
@@ -20,25 +25,40 @@ export function Slider() {
         onSlideChange={ () => console.log('slide change') }
         onSwiper={ (swiper) => console.log(swiper) }
       >
-        <SwiperSlide >
-          <Slide continent="América do Norte" description="O continente do novo mundo" imageSRC="assets/north_america.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Slide continent="América do Sul" description="O continente do novo mundo" imageSRC="assets/south_america.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Slide continent="Asia" description="O continente do novo mundo" imageSRC="assets/asia.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Slide continent="Africa" description="O continente do novo mundo" imageSRC="assets/africa.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Slide continent="Europa" description="O continente mais antigo" imageSRC="assets/europe.svg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Slide continent="Oceania" description="O continente do novo mundo" imageSRC="assets/oceania.jpg" />
-        </SwiperSlide>
+        { continents.map(continent => {
+          return (
+            <SwiperSlide >
+              <Container
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                height="450px"
+                overflow="hidden"
+              >
+                <Link
+                  color="gray.100"
+                  href={ `/continent/${continent.name}` }
+                  display="flex"
+                  flexDir="column"
+                  justifyContent="center"
+                  alignItems="center"
+                  textDecor="none"
+                  transition="0.2s"
+                >
+                  <Text fontSize="3rem" >{ continent.name }</Text>
+                  <Text fontSize="1.5rem" >{ continent.description }</Text>
+                </Link>
+                <Image
+                  pos="absolute"
+                  zIndex="-1"
+                  height={ ["250px", "250px", "450px", "450px", "450px"] }
+                  objectFit="cover"
+                  src={ continent.continentIMG }
+                />
+              </Container>
+            </SwiperSlide>
+          )
+        }) }
       </Swiper>
-    </Flex>
-  );
+    </Flex>)
 };

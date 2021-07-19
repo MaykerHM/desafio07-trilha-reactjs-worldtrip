@@ -3,12 +3,6 @@ import { Banner } from "../components/Banner";
 import { Slider } from "../components/Slider";
 import { TravelTypes } from "../components/TravelTypes";
 
-import { makeServer } from "../server"
-
-if (process.env.NODE_ENV === "development") {
-  makeServer({ environment: "development" })
-}
-
 export default function Home() {
 
   return (
