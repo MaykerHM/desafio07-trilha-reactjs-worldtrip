@@ -1,11 +1,23 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
 import { api } from './services/api'
 
+interface City {
+    name: string
+    country: string
+    cityIMG: string
+    flag: string
+}
+
 interface Continent {
     id: number
     name: string
-    description: string
+    shortDescription: string
     continentIMG: string
+    description: string
+    countriesNumber: string
+    languagesNumber: string
+    mostVisited100: string
+    cities: City[]
 }
 
 interface ContinentsProviderProps {

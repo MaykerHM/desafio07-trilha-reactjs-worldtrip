@@ -46,7 +46,7 @@ export function Slider() {
                   transition="0.2s"
                 >
                   <Text fontSize="3rem" >{ continent.name }</Text>
-                  <Text fontSize="1.5rem" >{ continent.description }</Text>
+                  <Text fontSize="1.5rem" >{ continent.shortDescription }</Text>
                 </Link>
                 <Image
                   pos="absolute"

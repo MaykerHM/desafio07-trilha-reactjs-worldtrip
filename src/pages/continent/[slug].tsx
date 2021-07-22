@@ -1,3 +1,4 @@
+import { Box, Img, Text } from '@chakra-ui/react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useContext } from 'react'
 import { ContinentsContext } from '../../continentsContext'
@@ -18,7 +19,16 @@ export default function Continent({ slug }: ContinentProps) {
   return (
     <>
       { continent.map(continentSelected => (
-        <h1> { continentSelected.name } </h1>
+        <Box
+          backgroundImage={ `url("${continentSelected.continentIMG}")` }
+          backgroundRepeat="no-repeat"
+          width="100%"
+          height="500px"
+        >
+          <Text>
+            { continentSelected.name }
+          </Text >
+        </Box >
       ))
       }
     </>
