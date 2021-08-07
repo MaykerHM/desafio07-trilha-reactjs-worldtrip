@@ -2,6 +2,7 @@ import { createContext, ReactNode, useEffect, useState } from 'react'
 import { api } from './services/api'
 
 interface City {
+    id: number
     name: string
     country: string
     cityIMG: string
