@@ -1,20 +1,28 @@
-import { Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
 export function Banner() {
   return (
     <Flex
-      justify="space-around"
+      justify="space-between"
     >
-      <Image src="./assets/background.svg" position="absolute" zIndex="-1" objectFit="cover" minWidth="100%" minH="163px" />
+      <Image
+        src="./assets/background.svg"
+        position="absolute"
+        zIndex="-1"
+        objectFit="cover"
+        minWidth="100vw"
+        height={ ["163px", "163px", "163px", "335px", "335px"] }
+      />
       <Flex
         flexDir="column"
+        justifyContent={ ["center", "center", "center", null, null] }
+        height={ ["163px", "163px", "163px", "335px", "335px"] }
+        ml={ ["1rem", "1rem", "1rem", "2rem", "8.75rem"] }
       >
         <Text
           fontSize={ ["1.25rem", "1.25rem", "1.25rem", "2.25rem", "2.25rem"] }
           color="gray.50"
-          mt={ [null, null, null, "5rem", "5rem"] }
-          mb={ [null, null, null, "1.25rem", "1.25rem"] }
-          lineHeight={ ["1.875rem", "3.375rem", "3.375rem", "4.5rem", "4.5rem"] }
+          lineHeight={ ["1.875rem", "1.875rem", "1.875rem", "4.5rem", "4.5rem"] }
         >
           5 Continentes,<br />infinitas possibilidades.
         </Text>
@@ -25,12 +33,15 @@ export function Banner() {
         >
           Chegou a hora de tirar do papel a viagem que você<br />sempre sonhou.</Text>
       </Flex>
-      <Flex pt="4.75rem" >
+      <Flex
+        pt="4.75rem"
+        mr={ ["1rem", "1rem", "1rem", "2rem", "8.75rem"] }
+      >
         <Image
           src="./assets/airplane.svg"
           alt="Avião"
           display={ ["none", "none", "none", "block", "block"] }
-          width={ [null, null, null, "400px", "450px"] }
+          width={ [null, null, null, "300px", "450px"] }
         />
       </Flex>
     </Flex>

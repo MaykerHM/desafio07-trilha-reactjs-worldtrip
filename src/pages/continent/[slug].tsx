@@ -22,48 +22,58 @@ export default function Continent({ slug }: ContinentProps) {
       { continent.map(continentSelected => (
         <>
           <Box
-            height="31.25rem"
+            height={ ["9.375rem", "9.375rem", "9.375rem", "31.25rem", "31.25rem"] }
           >
             <Img
               src={ continentSelected.continentIMG }
               objectFit="cover"
               minW="100vw"
-              height="31.25rem"
+              height={ ["9.375rem", "9.375rem", "9.375rem", "31.25rem", "31.25rem"] }
               position="absolute"
               zIndex="-1"
             ></Img>
-            <Text
-              color="gray.50"
-              fontSize="3rem"
-              lineHeight="4.5rem"
-              fontWeight="600"
-              marginLeft="8.75rem"
-              paddingTop="23rem"
+            <Flex
+              justifyContent={ ["center", "center", "center", "flex-start", "flex-start"] }
+              alignItems={ ["center", "center", "center", null, null] }
+              height={ ["9.375rem", "9.375rem", "9.375rem", "31.25rem", "31.25rem"] }
+              width="100vw"
             >
-              { continentSelected.name }
-            </Text >
+              <Text
+                color="gray.50"
+                fontSize={ ["1.75rem", "1.75rem", "1.75rem", "3rem", "3rem"] }
+                lineHeight={ ["2.625rem", "2.625rem", "2.625rem", "4.5rem", "4.5rem"] }
+                fontWeight="600"
+                marginLeft={ [null, null, null, "8.75rem", "8.75rem"] }
+                paddingTop={ [null, null, null, "23rem", "23rem"] }
+              >
+                { continentSelected.name }
+              </Text >
+            </Flex>
           </Box >
           <Flex
             flexDir="column"
             alignItems="center"
+            width="100vw"
           >
             <Flex
-              marginTop="5rem"
+              marginTop={ ["1.5rem", "1.5rem", "1.5rem", "5rem", "5rem"] }
+              flexDir={ ["column", "column", "column", "column", "row"] }
             >
               <Text
                 fontWeight="400"
-                fontSize="1.5rem"
-                lineHeight="2.25rem"
+                fontSize={ ["0.875rem", "0.875rem", "0.875rem", "1.5rem", "1.5rem"] }
+                lineHeight={ ["1.3125rem", "1.3125rem", "1.3125rem", "2.25rem", "2.25rem"] }
                 textAlign="justify"
-                width="40vw"
-                marginRight="5vw"
+                maxW={ ["80vw", "80vw", "80vw", "80vw", "40vw"] }
+                marginRight={ ["0vw", "0vw", "0vw", "0vw", "5vw"] }
               >
                 { continentSelected.description }
               </Text>
               <Flex
-                width="34vw"
-                justifyContent="space-between"
-                alignItems="center"
+                marginTop={ ["1rem", "1rem", "1rem", "5rem", "0rem"] }
+                width={ ["80vw", "80vw", "80vw", "80vw", "35vw"] }
+                justifyContent={ ["space-between", "space-between", "space-between", "space-between", "space-around"] }
+                alignItems={ ["flex-start", "flex-start", "flex-start", "flex-start", "center"] }
               >
                 <ContinentData data={ continentSelected.countriesNumber } dataType="países" />
                 <ContinentData data={ continentSelected.languagesNumber } dataType="línguas" />
@@ -71,15 +81,20 @@ export default function Continent({ slug }: ContinentProps) {
               </Flex>
             </Flex>
             <Flex
-              marginTop="5rem"
+              marginTop={ ["2rem", "2rem", "2rem", "5rem", "5rem"] }
               flexDir="column"
             >
               <Text
-                fontSize="2.25rem"
-                lineHeight="3.375rem"
+                fontSize={ ["1.5rem", "1.5rem", "1.5rem", "2.25rem", "2.25rem"] }
+                lineHeight={ ["2.25rem", "2.25rem", "2.25rem", "3.375rem", "3.375rem"] }
                 fontWeight="500"
+                marginBottom={ ["1.25rem", "1.25rem", "1.25rem", "2.5rem", "2.5rem"] }
               >Cidades +100</Text>
-              <Wrap spacing="45px">
+              <Wrap
+                spacing={ ["20px", "20px", "20px", "45px", "45px"] }
+                width="80vw"
+                justify={ ["center", "center", "center", "flex-start", "flex-start"] }
+              >
                 { continentSelected.cities.map(cities => (
                   <WrapItem>
                     <Box
@@ -89,7 +104,7 @@ export default function Continent({ slug }: ContinentProps) {
                       border="1px solid rgba(255, 186, 8, 0.5)"
                       backgroundColor="#FFFFFF"
                       borderRadius="4px"
-                      marginBottom="3rem"
+                      marginBottom={ [null, null, null, "3px", "3px"] }
                     >
                       <Img
                         src={ cities.cityIMG }
@@ -102,6 +117,7 @@ export default function Continent({ slug }: ContinentProps) {
                         justifyContent="space-between"
                         alignItems="center"
                         height="106px"
+                        margin="0px 24px"
                       >
                         <Flex
                           flexDir="column"
@@ -113,6 +129,7 @@ export default function Continent({ slug }: ContinentProps) {
                             fontWeight="600"
                             color="gray.600"
                             fontFamily="Barlow"
+                            marginBottom="12px"
                           >{ cities.name }</Text>
                           <Text
                             fontSize="1rem"
