@@ -32,8 +32,6 @@ export function Slider() {
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
-                height={ ["250px", "250px", "250px", "450px", "450px"] }
-                maxW="1240px"
                 overflow="hidden"
               >
                 <Link
