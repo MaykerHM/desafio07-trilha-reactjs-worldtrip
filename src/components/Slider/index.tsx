@@ -15,7 +15,7 @@ export function Slider() {
     <Flex
       justify="center"
       align="center"
-      mb="2.5rem"
+      mb={ ["1.5rem", "1.5rem", "1.5rem", "2.5rem", "2.5rem"] }
     >
       <Swiper
         spaceBetween={ 50 }
@@ -27,12 +27,13 @@ export function Slider() {
       >
         { continents.map(continent => {
           return (
-            <SwiperSlide >
+            <SwiperSlide>
               <Container
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
-                height="450px"
+                height={ ["250px", "250px", "250px", "450px", "450px"] }
+                maxW="1240px"
                 overflow="hidden"
               >
                 <Link
@@ -45,13 +46,20 @@ export function Slider() {
                   textDecor="none"
                   transition="0.2s"
                 >
-                  <Text fontSize="3rem" >{ continent.name }</Text>
-                  <Text fontSize="1.5rem" >{ continent.shortDescription }</Text>
+                  <Text
+                    fontSize={ ["1.5rem", "1.5rem", "1.5rem", "3rem", "3rem"] }
+                    lineHeight={ ["2.25rem", "2.25rem", "2.25rem", "4.5rem", "4.5rem"] }
+                  >{ continent.name }</Text>
+                  <Text
+                    fontSize={ ["0.875rem", "0.875rem", "0.875rem", "1.5rem", "1.5rem"] }
+                    lineHeight={ ["1.3125rem", "1.3125rem", "1.3125rem", "2.25rem", "2.25rem"] }
+                  >{ continent.shortDescription }</Text>
+
                 </Link>
                 <Image
                   pos="absolute"
                   zIndex="-1"
-                  height={ ["250px", "250px", "450px", "450px", "450px"] }
+                  height={ ["250px", "250px", "250px", "450px", "450px"] }
                   objectFit="cover"
                   src={ continent.continentIMG }
                 />
