@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/layout";
+import { Flex, Link } from "@chakra-ui/react";
 
 export function Header() {
   return (
@@ -8,7 +8,11 @@ export function Header() {
       py="4"
       bg="gray.50"
     >
-      <img src='/logo.svg' />
+      <Link
+        href="/"
+      >
+        <img src='/logo.svg' />
+      </Link>
     </Flex>
   )
 }
